@@ -660,3 +660,31 @@ spec:
         averageUtilization: 50
 ```
 
+
+
+## Querry Jenkins Secret store
+
+```
+stage('backup') {
+
+	      steps {
+	        script {
+	          withCredentials([
+	            string(credentialsId: 'hostname', variable: 'HOSTNAME'),
+	            string(credentialsId: 'USERNAME', variable: 'USERNAME'),
+	            string(credentialsId: 'passwd', variable: 'PASSWORD')
+	          ]) {
+
+	            sh '''
+                echo $HOSTNAME
+                echo $USERNAME
+                echo $PASSWORD
+	            '''
+	          }
+
+	        }
+
+	      }
+
+	    }
+```
