@@ -662,7 +662,7 @@ spec:
 
 
 
-## Querry Jenkins Secret store
+## Query Jenkins Secret store
 
 ```
 stage('backup') {
@@ -671,7 +671,7 @@ stage('backup') {
 	        script {
 	          withCredentials([
 	            string(credentialsId: 'hostname', variable: 'HOSTNAME'),
-	            string(credentialsId: 'USERNAME', variable: 'USERNAME'),
+	            string(credentialsId: 'username', variable: 'USERNAME'),
 	            string(credentialsId: 'passwd', variable: 'PASSWORD')
 	          ]) {
 
