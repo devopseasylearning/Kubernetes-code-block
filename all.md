@@ -662,29 +662,3 @@ spec:
 
 
 
-## Query Jenkins Secret store
-
-```
-stage('backup') {
-
-	      steps {
-	        script {
-	          withCredentials([
-	            string(credentialsId: 'hostname', variable: 'HOSTNAME'),
-	            string(credentialsId: 'username', variable: 'USERNAME'),
-	            string(credentialsId: 'passwd', variable: 'PASSWORD')
-	          ]) {
-
-	            sh '''
-                echo $HOSTNAME
-                echo $USERNAME
-                echo $PASSWORD
-	            '''
-	          }
-
-	        }
-
-	      }
-
-	    }
-```
